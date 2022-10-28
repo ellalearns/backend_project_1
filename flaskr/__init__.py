@@ -11,7 +11,8 @@ def create_app(test_config=None):
         response.headers.add("Access-Control-Allow-Headers", "Content-Type")
         response.headers.add("Access-Control-Allow-Headers", "Authorization")
         response.headers.add("Access-Control-Allow-Headers", "true")
-        response.headers.add("Access-Control-Allow-Methods", "GET")
+        response.headers.add("Access-Control-Allow-Methods", "GET, OPTIONS")
+        response.headers.add("Access-Control-Allow-Origin", "*")
         return response
 
     @app.route('/', methods=['GET'])
